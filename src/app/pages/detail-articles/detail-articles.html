@@ -1,0 +1,33 @@
+<div class="uk-container uk-margin-large-top uk-animation-fade">
+  <div class="uk-flex uk-flex-center">
+    <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-width-2xlarge">
+
+      <h2 class="uk-card-title uk-text-center uk-text-bold uk-margin-small-bottom">
+        {{ article?.title }}
+      </h2>
+
+      <div class="uk-text-center uk-margin-bottom">
+        <span class="uk-label uk-label-success">ID #{{ article?.id }}</span>
+      </div>
+
+      <div class="uk-flex uk-flex-center uk-margin">
+        <img
+          [src]="article?.imgPath"
+          alt="{{ article?.title }}"
+          class="uk-border-rounded uk-box-shadow-medium uk-width-2xlarge"
+        >
+      </div>
+
+      <p class="uk-text-lead uk-text-justify uk-margin-medium-top">
+        {{ article?.desc }}
+      </p>
+
+      <hr class="uk-divider-icon">
+
+      <p class="uk-text-meta uk-text-right">
+        ✍️ <strong>{{ article?.author }}</strong>
+      </p>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class=uk-container>
+  <div class="margin text-center">
+    <h2> Listes des articles</h2>
+  </div>
+  <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-medium-bottom "
+          (click)="onClickCallApi()">
+    Appel API
+  </button>
+  <div class="uk-margin uk-text-center uk-button uk-button-secondary ">
+    <a href="/ajouter-article" class="uk-button uk-button-large uk-button-success uk-border-pill uk-flex uk-flex-middle uk-flex-center">
+      <span uk-icon="icon: plus; ratio: 1.2" class="uk-margin-small-right"></span>
+      Ajouter un article
+    </a>
+  </div>
+  <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid="match: true">
+    @if (afficher) {
+      @for (article of articles; track article) {
+        <div>
+          <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-border-rounded margin"
+               [ngStyle]="{
+                 'background-image': 'url(' + article.imgPath + ')',
+                 'background-size': 'cover',
+                 'background-position': 'center'
+               }">
+            <div class="dark-overlay"></div>
+            <div class="articles-card-layer-2 texte-card-articles">
+              <h3 class="uk-card-title uk-text-bold texte-card-articles">{{ article.title }}</h3>
+              <div class="uk-text-bold">
+                <a [routerLink]="['/liste-articles', article.id]">Détails de l'article</a>
+              </div>
+              <button class="uk-margin uk-button uk-button-primary uk-margin-small-right"
+                      (click)="modifierArticle(article.id)">
+                Modifier
+              </button>
+              <button class=" uk-margin uk-button uk-button-danger" (click)="supprimerArticle(article.id)">Supprimer
+              </button>
+            </div>
+          </div>
+        </div>
+      }
+    }
+  </div>
+</div>

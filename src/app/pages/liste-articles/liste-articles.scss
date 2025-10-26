@@ -1,0 +1,23 @@
+.dark-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.articles-card-layer-2 {
+  position: relative;
+  z-index: 2;
+}
+.texte-card-articles {
+  color: white;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.margin {
+  margin: 2rem 0;
+}

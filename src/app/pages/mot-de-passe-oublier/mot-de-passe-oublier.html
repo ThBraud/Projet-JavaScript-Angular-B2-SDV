@@ -1,0 +1,30 @@
+<div class="uk-container uk-margin-top">
+  <h2>Mot de passe oublié</h2>
+
+  <form (ngSubmit)="onResetPassword()">
+    <div class="uk-margin">
+      <input class="uk-input" type="email" [(ngModel)]="email" name="email" placeholder="Votre adresse mail" required>
+    </div>
+
+    <div class="uk-margin">
+      <button class="uk-button uk-button-primary uk-width-1-1" type="submit">Réinitialiser le mot de passe</button>
+    </div>
+  </form>
+
+  <div *ngIf="message" class="uk-margin-top">
+    <div
+      [ngClass]="{'uk-alert-success': messageType === 'success','uk-alert-danger': messageType === 'error'}"
+      class="uk-alert"
+      uk-alert
+    >
+      <p>{{ message }}</p>
+    </div>
+  </div>
+  <button
+  class="uk-button uk-button-text uk-text-primary margin"
+  (click)="router.navigate(['/connexion'])"> Retour a la page de connexion
+  </button>
+
+
+
+</div>

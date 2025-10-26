@@ -1,0 +1,51 @@
+<div class="uk-container uk-margin-top uk-width-1-2@m uk-align-center">
+  <h2 class="uk-text-center">Inscription</h2>
+<form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+
+  <div class="uk-margin">
+    <input class="uk-input" type="text" formControlName="pseudo" placeholder="Pseudo">
+    <div *ngIf="signupForm.get('pseudo')?.touched && signupForm.get('pseudo')?.invalid" class="uk-text-danger">
+      Pseudo requis
+    </div>
+  </div>
+
+  <div class="uk-margin">
+    <input class="uk-input" type="email" formControlName="email" placeholder="Adresse mail">
+    <div *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.invalid" class="uk-text-danger">
+      Adresse mail invalide
+    </div>
+  </div>
+
+  <div class="uk-margin">
+    <input class="uk-input" type="password" formControlName="password" placeholder="Mot de passe">
+    <div *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid" class="uk-text-danger">
+      Mot de passe requis
+    </div>
+  </div>
+
+  <div class="uk-margin">
+    <input class="uk-input" type="password" formControlName="passwordConfirm" placeholder="Confirmer le mot de passe">
+  </div>
+
+  <div class="uk-margin">
+    <input class="uk-input" type="text" formControlName="city" placeholder="Ville">
+  </div>
+
+  <div class="uk-margin">
+    <input class="uk-input" type="text" formControlName="cityCode" placeholder="Code postal">
+  </div>
+
+  <div class="uk-margin">
+    <input class="uk-input" type="text" formControlName="phone" placeholder="Téléphone">
+  </div>
+
+  <div class="uk-margin">
+    <button class="uk-button uk-button-primary uk-width-1-1" type="submit">S’inscrire</button>
+  </div>
+
+  <div *ngIf="message" class="uk-alert" [ngClass]="{'uk-alert-success': messageType==='success','uk-alert-danger': messageType==='error'}">
+    {{ message }}
+  </div>
+
+</form>
+</div>

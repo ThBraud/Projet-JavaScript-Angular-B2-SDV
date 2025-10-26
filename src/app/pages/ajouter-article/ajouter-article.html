@@ -1,0 +1,52 @@
+<div class="uk-container uk-margin-top">
+  <h2 class="uk-heading-divider">Ajouter un article</h2>
+
+  <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+
+    <!-- Titre -->
+    <div class="uk-margin">
+      <input class="uk-input" type="text" formControlName="title" placeholder="Titre de l'article">
+      <span *ngIf="articleForm.get('title')?.invalid && articleForm.get('title')?.touched" class="uk-text-danger">
+        Le titre est obligatoire.
+      </span>
+    </div>
+
+    <!-- Description -->
+    <div class="uk-margin">
+      <textarea class="uk-textarea" formControlName="desc" placeholder="Description"></textarea>
+      <span *ngIf="articleForm.get('desc')?.invalid && articleForm.get('desc')?.touched" class="uk-text-danger">
+        La description est obligatoire.
+      </span>
+    </div>
+
+    <!-- Auteur -->
+    <div class="uk-margin">
+      <input class="uk-input" type="text" formControlName="author" placeholder="Auteur">
+      <span *ngIf="articleForm.get('author')?.invalid && articleForm.get('author')?.touched" class="uk-text-danger">
+        L'auteur est obligatoire.
+      </span>
+    </div>
+
+    <!-- URL de l'image -->
+    <div class="uk-margin">
+      <input class="uk-input" type="text" formControlName="imgPath" placeholder="URL de l'image">
+      <span *ngIf="articleForm.get('imgPath')?.invalid && articleForm.get('imgPath')?.touched" class="uk-text-danger">
+        L'URL de l'image est obligatoire.
+      </span>
+    </div>
+
+    <!-- Bouton Ajouter -->
+    <div class="uk-margin">
+      <button class="uk-button uk-button-primary uk-width-1-1" type="submit" [disabled]="articleForm.invalid">
+        Ajouter
+      </button>
+    </div>
+
+    <!-- Message de succès ou d'erreur -->
+    <div *ngIf="message" class="uk-alert"
+         [ngClass]="{'uk-alert-success': messageType==='success','uk-alert-danger': messageType==='error'}">
+      {{ message }}
+    </div>
+
+  </form>
+</div>

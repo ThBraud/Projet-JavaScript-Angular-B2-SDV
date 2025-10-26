@@ -1,0 +1,43 @@
+<div class="uk-container uk-margin-top">
+
+  <h2 class="uk-heading-line"><span>Modifier l'article {{article.title}}</span></h2>
+
+  <form (ngSubmit)="onClickModifyArticle()" #articleForm="ngForm" class="uk-form-stacked uk-width-1-2@m uk-margin-auto">
+
+    <div class="uk-margin">
+      <label class="uk-form-label" for="title">Titre</label>
+      <div class="uk-form-controls">
+        <input class="uk-input" id="title" name="title" [(ngModel)]="article.title" required>
+      </div>
+    </div>
+
+    <div class="uk-margin">
+      <label class="uk-form-label" for="desc">Description</label>
+      <div class="uk-form-controls">
+        <textarea class="uk-textarea" id="desc" name="desc" [(ngModel)]="article.desc" required></textarea>
+      </div>
+    </div>
+
+    <div class="uk-margin">
+      <label class="uk-form-label" for="author">Auteur</label>
+      <div class="uk-form-controls">
+        <input class="uk-input" id="author" name="author" [(ngModel)]="article.author" required>
+      </div>
+    </div>
+
+    <div class="uk-margin">
+      <label class="uk-form-label" for="imgPath">Chemin de l'image</label>
+      <div class="uk-form-controls">
+        <input class="uk-input" id="imgPath" name="imgPath" [(ngModel)]="article.imgPath">
+      </div>
+    </div>
+
+    <div class="uk-margin">
+      <button type="submit" class="uk-button uk-button-primary" [disabled]="!articleForm.form.valid">
+        Envoyer
+      </button>
+    </div>
+
+  </form>
+
+</div>

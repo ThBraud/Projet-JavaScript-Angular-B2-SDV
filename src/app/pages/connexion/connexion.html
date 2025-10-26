@@ -1,0 +1,32 @@
+<div class="uk-container uk-margin-top">
+  <div class="text-center">
+    <h2>Connexion</h2>
+  </div>
+  <form (ngSubmit)="onLogin()">
+    <div class="uk-margin">
+      <input class="uk-input" type="email" [(ngModel)]="email" name="email" placeholder="Adresse mail" required>
+    </div>
+    <div class="uk-margin">
+      <input class="uk-input" type="password" [(ngModel)]="password" name="password" placeholder="Mot de passe" required>
+    </div>
+    <div class="uk-margin">
+      <button
+        class="uk-button uk-button-primary uk-width-1-1" type="submit">Se connecter</button>
+    </div>
+    <!-- Message de retour -->
+    <div *ngIf="message" class="uk-text-center uk-margin-top margin big-text">
+      <span
+        [ngClass]="{
+          'uk-alert-danger': message.includes('Échec') || message.includes('Erreur')
+        }"
+      >
+        {{ message }}
+      </span>
+    </div>
+  </form>
+
+  <p class="uk-text-small uk-margin-top margin">
+    <a [routerLink]="['/mot-de-passe']">Mot de passe oublié ?</a>
+  </p>
+
+</div>
