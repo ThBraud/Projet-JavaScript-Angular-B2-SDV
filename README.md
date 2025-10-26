@@ -7,5 +7,5 @@
 
 
 # Lien vers le sujet 
-[Sujet](https://chocolaterie.github.io/documentation/docs/js-avance/project/project-angular)
+[Sujet](https://chocolaterie.github.io/documentation/docs/js-avance/project/project-angular)  
 [Back du projet](https://github.com/Chocolaterie/ApiArticle)
