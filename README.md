@@ -3,7 +3,7 @@
 - Fait du 14/10 au 22/10
 
 # Sujet 
-[Sujet](https://chocolaterie.github.io/documentation/docs/js-avance/project/project-angular)  
+[Lien](https://chocolaterie.github.io/documentation/docs/js-avance/project/project-angular)  
 L’application devait comporter les fonctionnalités suivantes :  
 ## Authentification  
 - Page de connexion
