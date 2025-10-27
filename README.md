@@ -23,10 +23,11 @@ L’application devait comporter les fonctionnalités suivantes :
 
 # 🔗 Lien vers l'API  
 [Back du projet](https://github.com/Chocolaterie/ApiArticle)  
+
 💡**L'api est nécessaire pour le bon fonctionnement de l'application**  
 ## Etape obligatoire pour faire fonctionner l'application    
 - Installer les dépendances : ``npm install``  
 - Cloner l'api : ``git clone https://github.com/Chocolaterie/ApiArticle``  
 - Se positionner dans le répertoire : ``cd ApiArticle``   
 - Lancer le serveur, via le cmd: ``npm start``  
-Les requêtes sont à effectuer à http://localhost:3000. **Attention c'est l'adresse de l'API pas de de l'application**
+Les requêtes sont à effectuer à http://localhost:3000. **Attention c'est l'adresse de l'API pas de de l'application, l'adresse de l'application est http://localhost:4200/le-nom-de-la-page**
